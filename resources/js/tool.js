@@ -3,7 +3,8 @@ Nova.booting((Vue, router) => {
         {
             name: 'nova-agile-testdox',
             path: '/nova-agile-testdox',
-            component: require('./components/Tool'),
+            component: require('./components/Tool')
         },
-    ])
+    ]),
+    Vue.component('tab', require('./components/Tab'));
 })

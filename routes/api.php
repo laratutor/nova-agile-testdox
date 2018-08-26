@@ -14,6 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/endpoint', function (Request $request) {
-//     //
-// });
+Route::get('/endpoint', function (Request $request) {
+    return [
+        'data' => [
+            'features' => [
+                'bob test' => [
+                    'bob can jump',
+                    'bob can fly',
+                    'bob can die',
+                ],
+                'joe test' => [
+                    'joe can hop',
+                    'joe cant fly',
+                    'joe lives forever',
+                ],
+            ],
+            'unit' => [
+                'bob test' => [
+                    'die returns true'
+                ],
+                'joe test' => [
+                    'die returns false'
+                ],
+            ],
+        ],
+    ];
+});
