@@ -7,13 +7,7 @@
                 <tabs>
                     <tab v-for="(files, key) in data" :key="key" :name="key">
                         <div v-for="(tests, file_name) in files">
-                            {{ file_name }}
-
-                            <ul>
-                                <li v-for="test_name in tests">
-                                    {{ test_name }}
-                                </li>
-                            </ul>
+                            <accordion :file_name="file_name" :tests="tests" />
                         </div>
                     </tab>
                 </tabs>

@@ -10,4 +10,5 @@ Nova.booting((Vue, router) => {
     ]);
     Vue.component('tabs', Tabs);
     Vue.component('tab', Tab);
+    Vue.component('accordion', require('./components/Accordion'));
 });
