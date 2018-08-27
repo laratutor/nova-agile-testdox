@@ -2,23 +2,25 @@
     <div v-if="loaded">
         <heading class="mb-6">Agile Testdox</heading>
 
-        <card class="bg-60 flex flex-col" style="min-height: 300px">
+        <card class="bg-60 flex flex-col p-3" style="min-height: 300px">
             <div>
-                <tab
-                    v-on:select-tab="selectTab"
-                    v-for="(value, key) in data"
-                    :files="value"
-                    :tab="tab"
-                    :key="key"
-                    :category="key"
-                />
+                <tabs>
+                    <tab v-for="(files, key) in data" :key="key" :name="key">
+                        <div v-for="(tests, file_name) in files">
+                            {{ file_name }}
 
-                <div v-show="tab === null" class="m-2">
-                    Select a tab above to get started.
-                </div>
+                            <ul>
+                                <li v-for="test_name in tests">
+                                    {{ test_name }}
+                                </li>
+                            </ul>
+                        </div>
+                    </tab>
+                </tabs>
             </div>
         </card>
     </div>
+
     <div v-else>
         <loader />
     </div>
@@ -54,5 +56,88 @@ export default {
 </script>
 
 <style>
-    /* Scoped Styles */
+    .tabs-component {
+      margin: 4em 0;
+    }
+
+    .tabs-component-tabs {
+      border: solid 1px #ddd;
+      border-radius: 6px;
+      margin-bottom: 5px;
+    }
+
+    @media (min-width: 700px) {
+      .tabs-component-tabs {
+        border: 0;
+        align-items: stretch;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: -1px;
+      }
+    }
+
+    .tabs-component-tab {
+      color: #999;
+      font-size: 14px;
+      font-weight: 600;
+      margin-right: 0;
+      list-style: none;
+    }
+
+    .tabs-component-tab:not(:last-child) {
+      border-bottom: dotted 1px #ddd;
+    }
+
+    .tabs-component-tab:hover {
+      color: #666;
+    }
+
+    .tabs-component-tab.is-active {
+      color: #000;
+    }
+
+    .tabs-component-tab.is-disabled * {
+      color: #cdcdcd;
+      cursor: not-allowed !important;
+    }
+
+    @media (min-width: 700px) {
+      .tabs-component-tab {
+        background-color: #fff;
+        border: solid 1px #ddd;
+        border-radius: 3px 3px 0 0;
+        margin-right: .5em;
+        transform: translateY(2px);
+        transition: transform .3s ease;
+      }
+
+      .tabs-component-tab.is-active {
+        border-bottom: solid 1px #fff;
+        z-index: 2;
+        transform: translateY(0);
+      }
+    }
+
+    .tabs-component-tab-a {
+      align-items: center;
+      color: inherit;
+      display: flex;
+      padding: .75em 1em;
+      text-decoration: none;
+    }
+
+    .tabs-component-panels {
+      padding: 4em 0;
+    }
+
+    @media (min-width: 700px) {
+      .tabs-component-panels {
+        border-top-left-radius: 0;
+        background-color: #fff;
+        border: solid 1px #ddd;
+        border-radius: 0 6px 6px 6px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .05);
+        padding: 4em 2em;
+      }
+    }
 </style>
