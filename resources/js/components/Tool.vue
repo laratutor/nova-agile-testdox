@@ -1,22 +1,25 @@
 <template>
-    <div v-if="loaded">
+    <div v-if="!loaded">
+        <loader />
+    </div>
+
+    <div v-else>
         <heading class="mb-6">Agile Testdox</heading>
 
         <card class="bg-60 flex flex-col p-3" style="min-height: 300px">
             <div>
                 <tabs>
                     <tab v-for="(files, key) in data" :key="key" :name="key">
-                        <div v-for="(tests, file_name) in files">
-                            <accordion :file_name="file_name" :tests="tests" />
-                        </div>
+                        <accordion
+                            v-for="(tests, file_name) in files"
+                            :key="file_name"
+                            :file_name="file_name"
+                            :tests="tests"
+                        />
                     </tab>
                 </tabs>
             </div>
         </card>
-    </div>
-
-    <div v-else>
-        <loader />
     </div>
 </template>
 

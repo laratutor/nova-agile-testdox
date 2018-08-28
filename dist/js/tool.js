@@ -1603,6 +1603,9 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -2441,8 +2444,9 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.loaded
-    ? _c(
+  return !_vm.loaded
+    ? _c("div", [_c("loader")], 1)
+    : _c(
         "div",
         [
           _c("heading", { staticClass: "mb-6" }, [_vm._v("Agile Testdox")]),
@@ -2464,15 +2468,10 @@ var render = function() {
                         "tab",
                         { key: key, attrs: { name: key } },
                         _vm._l(files, function(tests, file_name) {
-                          return _c(
-                            "div",
-                            [
-                              _c("accordion", {
-                                attrs: { file_name: file_name, tests: tests }
-                              })
-                            ],
-                            1
-                          )
+                          return _c("accordion", {
+                            key: file_name,
+                            attrs: { file_name: file_name, tests: tests }
+                          })
                         })
                       )
                     })
@@ -2485,7 +2484,6 @@ var render = function() {
         ],
         1
       )
-    : _c("div", [_c("loader")], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2583,7 +2581,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.message {\n  max-width: 500px;\n  margin-left: auto;\n  margin-right: auto;\n}\n.message-header {\n  cursor: pointer;\n}\n.message-body   {\n  padding: 0;\n  max-height: 10em;\n  overflow: hidden;\n  -webkit-transition: 0.3s ease all;\n  transition: 0.3s ease all;\n}\n.is-closed .message-body {\n  max-height: 0;\n}\n.message-content {\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.message {\n  max-width: 500px;\n}\n.message-header {\n  cursor: pointer;\n}\n.message-body   {\n  padding: 0;\n  max-height: 10em;\n  overflow: hidden;\n  -webkit-transition: 0.3s ease all;\n  transition: 0.3s ease all;\n}\n.is-closed .message-body {\n  max-height: 0;\n}\n.message-content {\n  padding: 20px;\n}\n", ""]);
 
 // exports
 
