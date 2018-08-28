@@ -112,7 +112,7 @@ export default {
 
       .tabs-component-tab.is-active {
         border-bottom: solid 1px #fff;
-        z-index: 2;
+        z-index: 3;
         transform: translateY(0);
       }
     }
@@ -127,6 +127,8 @@ export default {
 
     .tabs-component-panels {
       padding: 1em 0;
+      z-index: 2;
+      position: relative;
     }
 
     @media (min-width: 700px) {
