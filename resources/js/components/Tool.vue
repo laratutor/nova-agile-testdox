@@ -15,6 +15,7 @@
                             :key="file_name"
                             :file_name="file_name"
                             :tests="tests"
+                            class="max-w-xl"
                         />
                     </tab>
                 </tabs>

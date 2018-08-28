@@ -1606,6 +1606,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -2470,6 +2471,7 @@ var render = function() {
                         _vm._l(files, function(tests, file_name) {
                           return _c("accordion", {
                             key: file_name,
+                            staticClass: "max-w-xl",
                             attrs: { file_name: file_name, tests: tests }
                           })
                         })
@@ -2581,7 +2583,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.message {\n  max-width: 500px;\n}\n.message-header {\n  cursor: pointer;\n}\n.message-body   {\n  padding: 0;\n  max-height: 10em;\n  overflow: hidden;\n  -webkit-transition: 0.3s ease all;\n  transition: 0.3s ease all;\n}\n.is-closed .message-body {\n  max-height: 0;\n}\n.message-content {\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.message-body   {\n  padding: 0;\n  max-height: 10em;\n  overflow: hidden;\n  -webkit-transition: 0.3s ease all;\n  transition: 0.3s ease all;\n}\n.is-closed .message-body {\n  max-height: 0;\n}\n.message-content {\n  padding: 20px;\n}\n", ""]);
 
 // exports
 
@@ -2610,11 +2612,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            isOpen: false
+            isOpen: false,
+            messageHeaderClasses: ['font-bold', 'text-primary-dark', 'bg-primary-10%', 'text-xl', 'p-2', 'mt-2', 'border', 'border-primary-70%', 'rounded-lg', 'cursor-pointer']
         };
     },
     props: {
@@ -2649,8 +2658,63 @@ var render = function() {
     [
       _c(
         "div",
-        { staticClass: "message-header", on: { click: _vm.toggleAccordion } },
-        [_vm._v("\n        " + _vm._s(_vm.file_name) + "\n    ")]
+        { class: _vm.messageHeaderClasses, on: { click: _vm.toggleAccordion } },
+        [
+          _c(
+            "svg",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: !_vm.isOpen,
+                  expression: "!isOpen"
+                }
+              ],
+              staticClass: "sidebar-icon fill-current align-middle mr-0",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 320 640"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"
+                }
+              })
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "svg",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.isOpen,
+                  expression: "isOpen"
+                }
+              ],
+              staticClass: "sidebar-icon fill-current align-middle mr-0",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 448 640"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M207.029 381.476L12.686 187.132c-9.373-9.373-9.373-24.569 0-33.941l22.667-22.667c9.357-9.357 24.522-9.375 33.901-.04L224 284.505l154.745-154.021c9.379-9.335 24.544-9.317 33.901.04l22.667 22.667c9.373 9.373 9.373 24.569 0 33.941L240.971 381.476c-9.373 9.372-24.569 9.372-33.942 0z"
+                }
+              })
+            ]
+          ),
+          _vm._v("\n        " + _vm._s(_vm.file_name) + "\n    ")
+        ]
       ),
       _vm._v(" "),
       _c("div", { staticClass: "message-body" }, [
