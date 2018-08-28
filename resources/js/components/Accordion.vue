@@ -18,25 +18,24 @@
 
 <script>
 export default {
-    data: {
-        isOpen: true
+    data: () => {
+        return {
+            isOpen: false
+        }
     },
     props: {
         tests: null,
         file_name: null
     },
     methods: {
-        toggleAccordion: function() {
+        toggleAccordion() {
             this.isOpen = !this.isOpen;
-            console.log(this.isOpen, this.accordionClasses);
         }
     },
     computed: {
         accordionClasses: function() {
             return {
-                'is-closed': !this.isOpen,
-                'is-primary': this.isOpen,
-                'is-dark': !this.isOpen
+                'is-closed': !this.isOpen
             };
         }
     }
