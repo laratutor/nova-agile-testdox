@@ -2715,7 +2715,7 @@ var render = function() {
               "p",
               {
                 staticClass:
-                  "leading-tight p-2 hover:bg-30 border rounded border-white hover:border-primary"
+                  "leading-tight p-2 hover:bg-30 border rounded border-white hover:border-primary-30%"
               },
               [
                 _vm._v(

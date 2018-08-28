@@ -12,7 +12,7 @@
 
         <div class="message-body">
             <div class="message-content">
-                    <p class="leading-tight p-2 hover:bg-30 border rounded border-white hover:border-primary" v-for="test_name in tests">
+                    <p class="leading-tight p-2 hover:bg-30 border rounded border-white hover:border-primary-30%" v-for="test_name in tests">
                         {{ test_name }}
                     </p>
             </div>
