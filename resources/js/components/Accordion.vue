@@ -12,11 +12,9 @@
 
         <div class="message-body">
             <div class="message-content">
-                <ul>
-                    <li v-for="test_name in tests">
+                    <p class="leading-tight p-2 hover:bg-30 border rounded border-white hover:border-primary" v-for="test_name in tests">
                         {{ test_name }}
-                    </li>
-                </ul>
+                    </p>
             </div>
         </div>
     </article>
@@ -62,7 +60,6 @@ export default {
 <style>
     .message-body   {
       padding: 0;
-      max-height: 10em;
       overflow: hidden;
       transition: 0.3s ease all;
     }

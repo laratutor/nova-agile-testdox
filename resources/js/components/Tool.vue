@@ -1,12 +1,10 @@
 <template>
-    <div v-if="!loaded">
-        <loader />
-    </div>
-
-    <div v-else>
+    <div>
         <heading class="mb-6">Agile Testdox</heading>
-
-        <card class="bg-60 flex flex-col p-3" style="min-height: 300px">
+        <div v-if="!loaded">
+            <loader />
+        </div>
+        <div v-else>
             <div>
                 <tabs>
                     <tab v-for="(files, key) in data" :key="key" :name="key">
@@ -20,7 +18,7 @@
                     </tab>
                 </tabs>
             </div>
-        </card>
+        </div>
     </div>
 </template>
 
@@ -55,13 +53,14 @@ export default {
 
 <style>
     .tabs-component {
-      margin: 4em 0;
+      margin: 1em 0;
     }
 
     .tabs-component-tabs {
-      border: solid 1px #ddd;
+      border: dotted 1px #ddd;
       border-radius: 6px;
       margin-bottom: 5px;
+      padding-left: 0;
     }
 
     @media (min-width: 700px) {
@@ -70,19 +69,20 @@ export default {
         align-items: stretch;
         display: flex;
         justify-content: flex-start;
-        margin-bottom: -1px;
+        margin-bottom: -2px;
       }
     }
 
     .tabs-component-tab {
       color: #999;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 600;
       margin-right: 0;
       list-style: none;
+      text-transform: capitalize;
     }
 
-    .tabs-component-tab:not(:last-child) {
+    .tabs-component-tab {
       border-bottom: dotted 1px #ddd;
     }
 
@@ -103,6 +103,7 @@ export default {
       .tabs-component-tab {
         background-color: #fff;
         border: solid 1px #ddd;
+        border-bottom: dotted 1px #ddd;
         border-radius: 3px 3px 0 0;
         margin-right: .5em;
         transform: translateY(2px);
@@ -125,7 +126,7 @@ export default {
     }
 
     .tabs-component-panels {
-      padding: 4em 0;
+      padding: 1em 0;
     }
 
     @media (min-width: 700px) {
@@ -135,7 +136,7 @@ export default {
         border: solid 1px #ddd;
         border-radius: 0 6px 6px 6px;
         box-shadow: 0 0 10px rgba(0, 0, 0, .05);
-        padding: 4em 2em;
+        padding: 1em;
       }
     }
 </style>

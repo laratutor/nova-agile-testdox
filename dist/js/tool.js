@@ -1531,7 +1531,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.tabs-component {\n  margin: 4em 0;\n}\n.tabs-component-tabs {\n  border: solid 1px #ddd;\n  border-radius: 6px;\n  margin-bottom: 5px;\n}\n@media (min-width: 700px) {\n.tabs-component-tabs {\n    border: 0;\n    -webkit-box-align: stretch;\n        -ms-flex-align: stretch;\n            align-items: stretch;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    margin-bottom: -1px;\n}\n}\n.tabs-component-tab {\n  color: #999;\n  font-size: 14px;\n  font-weight: 600;\n  margin-right: 0;\n  list-style: none;\n}\n.tabs-component-tab:not(:last-child) {\n  border-bottom: dotted 1px #ddd;\n}\n.tabs-component-tab:hover {\n  color: #666;\n}\n.tabs-component-tab.is-active {\n  color: #000;\n}\n.tabs-component-tab.is-disabled * {\n  color: #cdcdcd;\n  cursor: not-allowed !important;\n}\n@media (min-width: 700px) {\n.tabs-component-tab {\n    background-color: #fff;\n    border: solid 1px #ddd;\n    border-radius: 3px 3px 0 0;\n    margin-right: .5em;\n    -webkit-transform: translateY(2px);\n            transform: translateY(2px);\n    -webkit-transition: -webkit-transform .3s ease;\n    transition: -webkit-transform .3s ease;\n    transition: transform .3s ease;\n    transition: transform .3s ease, -webkit-transform .3s ease;\n}\n.tabs-component-tab.is-active {\n    border-bottom: solid 1px #fff;\n    z-index: 2;\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n}\n}\n.tabs-component-tab-a {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: inherit;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: .75em 1em;\n  text-decoration: none;\n}\n.tabs-component-panels {\n  padding: 4em 0;\n}\n@media (min-width: 700px) {\n.tabs-component-panels {\n    border-top-left-radius: 0;\n    background-color: #fff;\n    border: solid 1px #ddd;\n    border-radius: 0 6px 6px 6px;\n    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .05);\n            box-shadow: 0 0 10px rgba(0, 0, 0, .05);\n    padding: 4em 2em;\n}\n}\n", ""]);
+exports.push([module.i, "\n.tabs-component {\n  margin: 1em 0;\n}\n.tabs-component-tabs {\n  border: dotted 1px #ddd;\n  border-radius: 6px;\n  margin-bottom: 5px;\n  padding-left: 0;\n}\n@media (min-width: 700px) {\n.tabs-component-tabs {\n    border: 0;\n    -webkit-box-align: stretch;\n        -ms-flex-align: stretch;\n            align-items: stretch;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: start;\n        -ms-flex-pack: start;\n            justify-content: flex-start;\n    margin-bottom: -2px;\n}\n}\n.tabs-component-tab {\n  color: #999;\n  font-size: 16px;\n  font-weight: 600;\n  margin-right: 0;\n  list-style: none;\n  text-transform: capitalize;\n}\n.tabs-component-tab {\n  border-bottom: dotted 1px #ddd;\n}\n.tabs-component-tab:hover {\n  color: #666;\n}\n.tabs-component-tab.is-active {\n  color: #000;\n}\n.tabs-component-tab.is-disabled * {\n  color: #cdcdcd;\n  cursor: not-allowed !important;\n}\n@media (min-width: 700px) {\n.tabs-component-tab {\n    background-color: #fff;\n    border: solid 1px #ddd;\n    border-bottom: dotted 1px #ddd;\n    border-radius: 3px 3px 0 0;\n    margin-right: .5em;\n    -webkit-transform: translateY(2px);\n            transform: translateY(2px);\n    -webkit-transition: -webkit-transform .3s ease;\n    transition: -webkit-transform .3s ease;\n    transition: transform .3s ease;\n    transition: transform .3s ease, -webkit-transform .3s ease;\n}\n.tabs-component-tab.is-active {\n    border-bottom: solid 1px #fff;\n    z-index: 2;\n    -webkit-transform: translateY(0);\n            transform: translateY(0);\n}\n}\n.tabs-component-tab-a {\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: inherit;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  padding: .75em 1em;\n  text-decoration: none;\n}\n.tabs-component-panels {\n  padding: 1em 0;\n}\n@media (min-width: 700px) {\n.tabs-component-panels {\n    border-top-left-radius: 0;\n    background-color: #fff;\n    border: solid 1px #ddd;\n    border-radius: 0 6px 6px 6px;\n    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .05);\n            box-shadow: 0 0 10px rgba(0, 0, 0, .05);\n    padding: 1em;\n}\n}\n", ""]);
 
 // exports
 
@@ -1581,8 +1581,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
-//
-//
 //
 //
 //
@@ -2445,47 +2443,40 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return !_vm.loaded
-    ? _c("div", [_c("loader")], 1)
-    : _c(
-        "div",
-        [
-          _c("heading", { staticClass: "mb-6" }, [_vm._v("Agile Testdox")]),
-          _vm._v(" "),
-          _c(
-            "card",
-            {
-              staticClass: "bg-60 flex flex-col p-3",
-              staticStyle: { "min-height": "300px" }
-            },
-            [
-              _c(
-                "div",
-                [
-                  _c(
-                    "tabs",
-                    _vm._l(_vm.data, function(files, key) {
-                      return _c(
-                        "tab",
-                        { key: key, attrs: { name: key } },
-                        _vm._l(files, function(tests, file_name) {
-                          return _c("accordion", {
-                            key: file_name,
-                            staticClass: "max-w-xl",
-                            attrs: { file_name: file_name, tests: tests }
-                          })
+  return _c(
+    "div",
+    [
+      _c("heading", { staticClass: "mb-6" }, [_vm._v("Agile Testdox")]),
+      _vm._v(" "),
+      !_vm.loaded
+        ? _c("div", [_c("loader")], 1)
+        : _c("div", [
+            _c(
+              "div",
+              [
+                _c(
+                  "tabs",
+                  _vm._l(_vm.data, function(files, key) {
+                    return _c(
+                      "tab",
+                      { key: key, attrs: { name: key } },
+                      _vm._l(files, function(tests, file_name) {
+                        return _c("accordion", {
+                          key: file_name,
+                          staticClass: "max-w-xl",
+                          attrs: { file_name: file_name, tests: tests }
                         })
-                      )
-                    })
-                  )
-                ],
-                1
-              )
-            ]
-          )
-        ],
-        1
-      )
+                      })
+                    )
+                  })
+                )
+              ],
+              1
+            )
+          ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -2583,7 +2574,7 @@ exports = module.exports = __webpack_require__(0)(false);
 
 
 // module
-exports.push([module.i, "\n.message-body   {\n  padding: 0;\n  max-height: 10em;\n  overflow: hidden;\n  -webkit-transition: 0.3s ease all;\n  transition: 0.3s ease all;\n}\n.is-closed .message-body {\n  max-height: 0;\n}\n.message-content {\n  padding: 20px;\n}\n", ""]);
+exports.push([module.i, "\n.message-body   {\n  padding: 0;\n  overflow: hidden;\n  -webkit-transition: 0.3s ease all;\n  transition: 0.3s ease all;\n}\n.is-closed .message-body {\n  max-height: 0;\n}\n.message-content {\n  padding: 20px;\n}\n", ""]);
 
 // exports
 
@@ -2594,8 +2585,6 @@ exports.push([module.i, "\n.message-body   {\n  padding: 0;\n  max-height: 10em;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
 //
 //
 //
@@ -2718,20 +2707,26 @@ var render = function() {
       ),
       _vm._v(" "),
       _c("div", { staticClass: "message-body" }, [
-        _c("div", { staticClass: "message-content" }, [
-          _c(
-            "ul",
-            _vm._l(_vm.tests, function(test_name) {
-              return _c("li", [
+        _c(
+          "div",
+          { staticClass: "message-content" },
+          _vm._l(_vm.tests, function(test_name) {
+            return _c(
+              "p",
+              {
+                staticClass:
+                  "leading-tight p-2 hover:bg-30 border rounded border-white hover:border-primary"
+              },
+              [
                 _vm._v(
                   "\n                    " +
                     _vm._s(test_name) +
                     "\n                "
                 )
-              ])
-            })
-          )
-        ])
+              ]
+            )
+          })
+        )
       ])
     ]
   )
