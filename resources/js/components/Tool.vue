@@ -40,7 +40,6 @@ export default {
             Nova.request().get('/nova-vendor/nova-agile-testdox/').then(response => {
                 self.data = response.data.data
                 self.loaded=true
-                console.log(self.data)
             })
 
         },

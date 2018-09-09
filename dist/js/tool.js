@@ -1631,7 +1631,6 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
                                 Nova.request().get('/nova-vendor/nova-agile-testdox/').then(function (response) {
                                     self.data = response.data.data;
                                     self.loaded = true;
-                                    console.log(self.data);
                                 });
 
                             case 2:
