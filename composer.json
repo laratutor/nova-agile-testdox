@@ -1,11 +1,27 @@
 {
     "name": "laratutor/nova-agile-testdox",
-    "description": "A Laravel Nova tool.",
+    "description": "A Laravel Nova tool to display Agile testdox.",
     "keywords": [
         "laravel",
-        "nova"
+        "nova",
+        "testdox",
+        "tdd",
+        "test driven development",
+        "testing",
+        "tests",
+        "agile"
     ],
     "license": "MIT",
+    "authors": [
+        {
+            "name": "James LaChance",
+            "email": "fatboyxpc@gmail.com"
+        },
+        {
+            "name": "Glenn Kimble Jr",
+            "email": "glenn@glennkimble.me"
+        }
+    ],
     "require": {
         "php": ">=7.1.0",
         "phpunit/phpunit": "^7.3"
